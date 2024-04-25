@@ -6,9 +6,7 @@ Alyssa Jordan
 ## Design and Purpose:
 Purpose: This list application is a To Be Read (TBR) List. The users will add books they want to read to their list. Many avid readers keep a running TBR to list books they own and have yet to read and/or to list books they are interested in readings, but are waiting to purchase in the future. They are my primary audience.
 
-Initial Sketch of User Interface Layout:
-
-![alt text]()
+Initial Sketch of User Interface Layout: ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/6f3ba8179b8a6245621aebf834a05e67fbaa9db3/Assignment2/Sketch.jpg)
 
 ## Basic Use
 To start add a book to your TBR using the textbox and pressing 'Add Book'. If title is blank, it will not be added. Once a book is added to your list, you can mark it as read or delete it using the buttons on the right side that say 'Read' and 'X', respectively. If you mark a book as read, your book is removed from your list and your books read count goes up. If you delete it, the book is removed from your list.
