@@ -1,5 +1,6 @@
 # INFO670MobileDev
 INFO670 Cross-platform Mobile Development
+
 Alyssa Jordan
 
 [Assignment 1: Initial GitHub Setup](https://github.com/alyssaaj/INFO670MobileDev/tree/9d99c4ed89484945f35e453a92140a601f3bdfe9/MyFirstReactNative)
