@@ -1,5 +1,6 @@
 # Assignment 2 - List Application 
 INFO670 Cross-platform Mobile Development
+
 Alyssa Jordan
 
 ## Design and Purpose:
