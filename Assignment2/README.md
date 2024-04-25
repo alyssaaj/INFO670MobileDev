@@ -13,14 +13,22 @@ To start add a book to your TBR using the textbox and pressing 'Add Book'. Once 
 ## Application Screenshots
 
 When you open the app, it looks like this:
+
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/c24cd65944bfe1ba1b86adcf46a6fb5fc2bcd102/Assignment2/homepage.png)
+
+
 You can add books by entering their title in the text and pressing 'Add Book' button:
+
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/10284b57bfbc3daf0a56d77de599c9eeee10a835/Assignment2/addbooks.png)
 
+
 When you mark a book as read, it is removed from your TBR and your books read count increases:
+
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/c24cd65944bfe1ba1b86adcf46a6fb5fc2bcd102/Assignment2/readbooks.png)
 
+
 When you delete a book from your TBR, it is removed:
+
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/c24cd65944bfe1ba1b86adcf46a6fb5fc2bcd102/Assignment2/deletebooks.png)
 
 
