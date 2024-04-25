@@ -39,7 +39,6 @@ const BookList = () => {
   }
 
   const addBook = () => {
-    console.log("her"+title+"her");
     if (title != null && title !== '') {
       setTitles([...titles, title]);
       setTitle(null);
