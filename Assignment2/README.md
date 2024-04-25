@@ -9,7 +9,7 @@ Purpose: This list application is a To Be Read (TBR) List. The users will add bo
 User Interface Layout:
 
 ## Basic Use
-To start add a book to your TBR using the textbox and pressing 'Add Book'. Once a book is added to your list, you can mark it as read or delete it using the buttons on the right side that say 'Read' and 'X', respectively. If you mark a book as read, your book is removed from your list and your books read count goes up. If you delete it, the book is removed from your list.
+To start add a book to your TBR using the textbox and pressing 'Add Book'. If title is blank, it will not be added. Once a book is added to your list, you can mark it as read or delete it using the buttons on the right side that say 'Read' and 'X', respectively. If you mark a book as read, your book is removed from your list and your books read count goes up. If you delete it, the book is removed from your list.
 
 ## Application Screenshots
 
