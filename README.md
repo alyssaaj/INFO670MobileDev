@@ -9,3 +9,7 @@ Alyssa Jordan
 [Assignment 2: List Application](https://github.com/alyssaaj/INFO670MobileDev/tree/9d99c4ed89484945f35e453a92140a601f3bdfe9/Assignment2) 
 
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/5b6d728f2c50de1a351a9726176183e5b227027a/Assignment2/addbooks.png)
+
+[Assignment 3: Photo Gallery Application](https://github.com/alyssaaj/INFO670MobileDev/tree/ed08d38625dd1dfc67be17be3defe3587193dfca/A3) 
+
+

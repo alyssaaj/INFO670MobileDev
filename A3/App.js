@@ -50,8 +50,6 @@ const GalleryScreen = ({navigation}) => {
 };
 
 const WideScreen = ( props ) => {
-  {console.log("Wide")}   
-  {console.log(props.route.params)}
   return (
     <PaperProvider theme={theme}>
       <View>
