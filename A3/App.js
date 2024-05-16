@@ -13,6 +13,7 @@ import { MaterialCommunityIcons } from 'react-native-vector-icons';
 import Picture from './ui/Picture';
 import Person from './ui/Person';
 import AllPictures from './ui/AllPictures';
+import FullPicture from './ui/FullPicture';
 
 const theme = {
   ...DefaultTheme,
@@ -53,7 +54,7 @@ const WideScreen = ( props ) => {
   return (
     <PaperProvider theme={theme}>
       <View>
-        <Picture title={props.route.params.title} content={props.route.params.content} picLoc={props.route.params.picLoc}/>
+        <FullPicture title={props.route.params.title} content={props.route.params.content} picLoc={props.route.params.picLoc}/>
       </View>
     </PaperProvider>
   );
