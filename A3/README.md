@@ -16,6 +16,12 @@ Using the bottom navigation bar, the user can select either the gallery page or 
 
 When the user opens the app, it shows the Gallery screen.
 
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/430517c3b1fdb265fc9cd3341de3d4dac34b2d95/A3/screenshots/GalleryScreen.png)
+
 Once a picture is pressed on the Gallery screen, the app takes the user to another page that expands the picture into the full image.
 
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/430517c3b1fdb265fc9cd3341de3d4dac34b2d95/A3/screenshots/PictureViewingScreen.png)
+
 Using the bottom navigation bar, the user can navigate to the Profile screen. On the Profile screen, the user can adjust their profile. Clicking the Save button saves the profile to local storage allowing users to reload the app and maintain their profile settings.
+
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/430517c3b1fdb265fc9cd3341de3d4dac34b2d95/A3/screenshots/ProfileScreen.png)
