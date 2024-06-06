@@ -1,21 +1,34 @@
-# Assignment 4 - Quiz Flashcard Application
+# Assignment 4 - QuizMe Flashcard Application 
 
 INFO670 Cross-platform Mobile Development
 
 Alyssa Jordan
 
 ## Design and Purpose:
-This is a photo gallery application. The users can view a gallery of photos, select photos to expand, and edit their user profile. The primary audience for this application is photographers.
-
+This is a quiz flashcard application. The users can add new flashcards and then quiz themself. It is a study tool. The primary audience for this application is people looking to review information.
 
 ## Basic Use
-Using the bottom navigation bar, the user can select either the gallery page or profile page. On the gallery page, the user can see all the photos in the gallery along with their titles and captions. If the user clicks on a photo, the photo will expand to show the full image as well as the photo's title and caption. There is a back button that returns the user to the gallery page. The user can also go to the profile page where they are able to add information to their user profile and save to a local database for their next use.
+Using the bottom navigation bar, the user can select either the quiz page or the edit page. On the quiz page, the user is asked if they would like to start the quiz. If they start the quiz, their flashcards will load with the question shown and the answer hidden. The user can reload the quiz at any point to make all the answers hidden again or to update the quiz with new flashcards. On the edit page, the user is able add new flashcards (question/answer pairs). Blank questions or answers are not accepted.
+
 
 
 ## Application Screenshots
 
-When the user opens the app, it shows the Gallery screen.
+When the user opens the app, it shows the Quiz screen.
 
-![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/430517c3b1fdb265fc9cd3341de3d4dac34b2d95/A3/screenshots/GalleryScreen.png)
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/520280524ac7677e35e616b2717e41a3e584ca0c/Assignment4/screenshots/StartQuiz.png)
 
+
+If the user hits 'Start the Quiz', the flashacards load. The flashcard section scrolls to show all of them.
+
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/520280524ac7677e35e616b2717e41a3e584ca0c/Assignment4/screenshots/QuizLoaded.png)
+
+The user can click 'Show Answer' on any flashcard to reveal the answer. The user can hit 'Reload Quiz' to restart the quiz and hide all the answers. This also loads in any newly added questions.
+
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/520280524ac7677e35e616b2717e41a3e584ca0c/Assignment4/screenshots/SomeAnswersRevealed.png)
+
+
+The Edit screen allows the user to add new flashcards.
+
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/520280524ac7677e35e616b2717e41a3e584ca0c/Assignment4/screenshots/AddedQuestion.png)
 
