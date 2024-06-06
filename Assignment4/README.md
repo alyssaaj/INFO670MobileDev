@@ -90,7 +90,7 @@ Response:
 
 ## Database
 
-Database schema (MySQL)
+Database schema (MySQL - wk77_INFO300_202103)
 
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/e28b191512ebdb2a364d45b3e2b1964fdcc8c892/Assignment4/screenshots/DatabaseSchema.png)
 
