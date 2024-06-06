@@ -53,6 +53,7 @@ Response: 200 OK
 ## Database
 
 Database schema (MySQL)
+
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/520280524ac7677e35e616b2717e41a3e584ca0c/Assignment4/screenshots/AddedQuestion.png)
 
 ## Links
