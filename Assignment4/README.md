@@ -30,16 +30,22 @@ The user can click 'Show Answer' on any flashcard to reveal the answer. The user
 ### addQuestion
 GET Request
 
-endpoint:
-  https://www.cs.drexel.edu/~amj426/A4/addQuestion.php?question={question}&answer={answer}
+Endpoint: https://www.cs.drexel.edu/~amj426/A4/addQuestion.php?question={question}&answer={answer}
 
-parameters: 
-  - question = varchar
-  - answer = varchar
+Parameters: question = varchar, answer = varchar
 
-response:
-  - 200 OK
-  - no return body
+Response: 200 OK, No return body
+
+### getQuiz
+GET Request
+
+Endpoint: https://www.cs.drexel.edu/~amj426/A4/getQuiz.php
+
+Parameters: None
+
+Response: 200 OK
+
+
 
 ## Database
 
