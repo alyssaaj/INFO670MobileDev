@@ -54,7 +54,7 @@ Response: 200 OK
 
 Database schema (MySQL)
 
-![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/520280524ac7677e35e616b2717e41a3e584ca0c/Assignment4/screenshots/AddedQuestion.png)
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/e28b191512ebdb2a364d45b3e2b1964fdcc8c892/Assignment4/screenshots/DatabaseSchema.png)
 
 ## Links
 
