@@ -38,11 +38,15 @@ GET Request
 Endpoint: https://www.cs.drexel.edu/~amj426/A4/addQuestion.php?question={question}&answer={answer}
 
 Parameters: 
+
     question: String
+    
     answer: String
 
 Response: 
+
     Status Code: 200 OK
+    
     No response body
 
 ### getQuiz
@@ -53,8 +57,11 @@ Endpoint: https://www.cs.drexel.edu/~amj426/A4/getQuiz.php
 Parameters: None
 
 Response: 
+
     Status Code: 200 OK
+    
     Response Body (Example):
+    
     [
         {
             "id": "41",
