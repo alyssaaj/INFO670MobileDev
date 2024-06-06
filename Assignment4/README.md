@@ -35,20 +35,58 @@ The Edit screen allows the user to add new flashcards.
 ### addQuestion
 GET Request
 
-Endpoint: /addQuestion.php?question={question}&answer={answer}
+Endpoint: https://www.cs.drexel.edu/~amj426/A4/addQuestion.php?question={question}&answer={answer}
 
-Parameters: question = varchar, answer = varchar
+Parameters: 
+    question: String
+    answer: String
 
-Response: 200 OK, No return body
+Response: 
+    Status Code: 200 OK
+    No response body
 
 ### getQuiz
 GET Request
 
-Endpoint: /getQuiz.php
+Endpoint: https://www.cs.drexel.edu/~amj426/A4/getQuiz.php
 
 Parameters: None
 
-Response: 200 OK
+Response: 
+    Status Code: 200 OK
+    Response Body (Example):
+    [
+        {
+            "id": "41",
+            "question": "What is the state bird of Alabama?",
+            "answer": "Yellowhammer"
+        },
+        {
+            "id": "42",
+            "question": "What is the state bird of Alaska?",
+            "answer": "Willow ptarmigan"
+        },
+        {
+            "id": "43",
+            "question": "What is the state bird of Arizona?",
+            "answer": "Cactus wren"
+        },
+        {
+            "id": "44",
+            "question": "What is the state bird of Arkansas?",
+            "answer": "Northern mockingbird"
+        },
+        {
+            "id": "45",
+            "question": "what is the state bird of California?",
+            "answer": "California quail"
+        },
+        {
+            "id": "46",
+            "question": "What is the state bird of Colorado?",
+            "answer": "Lark bunting"
+        }
+    ]
 
 ## Database
 
