@@ -17,6 +17,8 @@ Alyssa Jordan
 
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/abddeea6b12aa7a68eafe76ac28a3bd353301203/A3/screenshots/GalleryScreen.png)
 
+
 [Assignment 4: QuizMe Flashcard Application](https://github.com/alyssaaj/INFO670MobileDev/tree/b78f3b024425a2dba2c4abf645883a1239c054c1/Assignment4) 
+
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/520280524ac7677e35e616b2717e41a3e584ca0c/Assignment4/screenshots/QuizLoaded.png)
 
