@@ -25,12 +25,17 @@ The user can click 'Show Answer' on any flashcard to reveal the answer. The user
 
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/520280524ac7677e35e616b2717e41a3e584ca0c/Assignment4/screenshots/SomeAnswersRevealed.png)
 
+The Edit screen allows the user to add new flashcards.
+
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/520280524ac7677e35e616b2717e41a3e584ca0c/Assignment4/screenshots/AddedQuestion.png)
+
+
 ## Server APIs
 
 ### addQuestion
 GET Request
 
-Endpoint: https://www.cs.drexel.edu/~amj426/A4/addQuestion.php?question={question}&answer={answer}
+Endpoint: /addQuestion.php?question={question}&answer={answer}
 
 Parameters: question = varchar, answer = varchar
 
@@ -39,19 +44,24 @@ Response: 200 OK, No return body
 ### getQuiz
 GET Request
 
-Endpoint: https://www.cs.drexel.edu/~amj426/A4/getQuiz.php
+Endpoint: /getQuiz.php
 
 Parameters: None
 
 Response: 200 OK
 
-
-
 ## Database
 
-
-
-The Edit screen allows the user to add new flashcards.
-
+Database schema (MySQL)
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/520280524ac7677e35e616b2717e41a3e584ca0c/Assignment4/screenshots/AddedQuestion.png)
+
+## Links
+
+### React Native Code: 
+https://github.com/alyssaaj/INFO670MobileDev/tree/5a37b4defab96729358c706c2ceda31242e46bfb/Assignment4/QuizMe
+
+### Server API Code:
+https://www.cs.drexel.edu/~amj426/A4/addQuestion.php?question={question}&answer={answer}
+https://www.cs.drexel.edu/~amj426/A4/getQuiz.php
+
 
