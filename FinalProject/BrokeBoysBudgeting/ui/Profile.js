@@ -1,10 +1,105 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet} from 'react-native';
-import { Avatar, TextInput, Appbar, Text, Button } from 'react-native-paper';
+import { View, StyleSheet, Alert } from 'react-native';
+import { Avatar, TextInput, Appbar, Text, Button, Modal, Portal } from 'react-native-paper';
 
 
 const Profile = () => {
-  const [category, setCategory] = useState('');
+  const [cat, setCat] = useState('');
+  const [responseStatus, setResponseStatus] = useState('');
+  
+  const [visible, setVisible] = React.useState(false);
+  const showModal = () => setVisible(true);
+  const hideModal = () => setVisible(false);
+
+  const [dataUser, setDataUser] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const [isLoading2, setLoading2] = useState(true);
+  const [userCat, setUserCat] = useState([]);
+  const [name, setName] = useState('');
+
+  const getUser = async () => {
+    try {
+      const response = await fetch('https://www.cs.drexel.edu/~amj426/FP/getUser.php?id=1');
+      const json = await response.json();
+      setDataUser(json);
+      getCategoriesByUser();
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getCategoriesByUser = async () => {
+    try {
+      const response = await fetch('https://www.cs.drexel.edu/~amj426/FP/getCategoriesByUser.php?user=1');
+      const json = await response.json();
+      setUserCat(json);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading2(false);
+    }
+  };
+  
+  const addCategory = () => {
+    if(cat != null && cat !== ''){
+      const url = `https://www.cs.drexel.edu/~amj426/FP/addCategory.php?user=1&cat=${cat}`;
+      fetch(url)
+        .then(response => response.text())
+        .then(data => {
+          if (data === "1") {
+            setResponseStatus("Category added successfully.");
+            Alert.alert("Success", "Category added successfully.");
+          } else {
+            setResponseStatus("Failed to add category.");
+            Alert.alert("Error", "Failed to add category.");
+          }
+        })
+        .catch(error => {
+          setResponseStatus("Error: " + error.message + ", MORE: " + JSON.stringify(error));
+          console.log(error);
+          // Alert.alert("Error", "Error: " + error.message);
+        });
+        setCat('');
+        getUser();
+        hideModal();
+    }
+    else{
+      setResponseStatus("Failed to add category. The field was left blank.");
+      Alert.alert("Error", "Failed to add category. The field was left blank.");
+    }
+  };
+
+  // const updateUser = () => {
+  //   if(name != null && name !== ''){
+  //     const url = `https://www.cs.drexel.edu/~amj426/FP/updateUser.php?name=${name}&budget=5000/`;
+  //     fetch(url, {mode: 'cors'})
+  //       .then(response => response.text())
+  //       .then(data => {
+  //         if (data === "1") {
+  //           //setResponseStatus("Category added successfully.");
+  //           //Alert.alert("Success", "Category added successfully.");
+  //         } else {
+  //           //setResponseStatus("Failed to add category.");
+  //           //Alert.alert("Error", "Failed to add category.");
+  //         }
+  //       })
+  //       .catch(error => {
+  //         //setResponseStatus("Error: " + error.message + ", MORE: " + JSON.stringify(error));
+  //         console.log(error);
+  //         // Alert.alert("Error", "Error: " + error.message);
+  //       });
+  //   }
+  //   else{
+  //     //setResponseStatus("Failed to add category. The field was left blank.");
+  //     //Alert.alert("Error", "Failed to add category. The field was left blank.");
+  //   }
+
+  // };
+  useEffect(() => {
+    getUser();
+  },[]);
 
   return (
 
@@ -28,31 +123,55 @@ const Profile = () => {
                     marginBottom: 20,
                 }} 
             />
-
-              <View style={styles.row}>
-                <Text style={styles.label}>Name:</Text>
-                <Text style={styles.input}>Alyssa</Text>
+            {isLoading ? (<View></View>) : (
+              <View>
+                <View style={styles.row}>
+                  <Text style={styles.label}>Name:</Text>
+                  <Text style={styles.input}>{dataUser[0].name}</Text>
+                </View>
+                {/* <View style={styles.row}>
+                  <TextInput
+                    label="Name:"
+                    style={styles.inputNew}
+                    value={name}
+                    onChangeText={name => setName(name)}
+                  />
+                </View> */}
+                <View style={styles.row}>
+                  <Text style={styles.label}>Budget:</Text>
+                  <Text style={styles.input}>{dataUser[0].budget}</Text>
+                </View>
+                <View style={styles.row}>
+                  <Text style={styles.label}>Categories:</Text>
+                    <Text style={styles.input}>
+                      {userCat.map((c, index) => (
+                        <Text key={index}>{c.cat}, </Text>
+                      ))}
+                      </Text>
+                </View>
+                {/* <Button style={{marginTop: 20}} mode="contained" onPress={updateUser}>Save</Button> */}
               </View>
-              <View style={styles.row}>
-                <Text style={styles.label}>Budget:</Text>
-                <Text style={styles.input}>$1000</Text>
-              </View>
-              <View style={styles.row}>
-                <Text style={styles.label}>Categories:</Text>
-                  <Text style={styles.input}>Food, Fun, Household, Transportation, Utilities</Text>
-              </View>
+            )}
           </View>
 
-          <View style = {styles.addNew}>
+          <View style = {styles.addNew}> 
+            <Portal>
+              <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={styles.containerStyle}>
                 <TextInput
                   label="New Category"
                   style={styles.inputNew}
-                  value={category}
-                  onChangeText={category => setCategory(category)}
+                  value={cat}
+                  onChangeText={cat => setCat(cat)}
                 />
-                <Button mode="contained" onPress={() => console.log('Pressed')}>
-                  Add New Category
+                <Button style={{marginTop: 20}} mode="contained" onPress={addCategory}>
+                  Add Category
                 </Button>
+              </Modal>
+            </Portal>
+
+              <Button style={{marginTop: 30}} mode="contained" onPress={showModal}>
+                Add New Category
+              </Button>
           </View>
       </View>
     </View>
@@ -81,7 +200,7 @@ const styles = StyleSheet.create({
       row: {
         flexDirection: 'row',
         alignItems: 'center',
-        width: 360,
+        width: 330,
       },
       label: {
         fontSize: 16,
@@ -105,14 +224,17 @@ const styles = StyleSheet.create({
       },
       inputNew: {
         flex: 3,
-        paddingTop: 5,
-        maxHeight: 70,
-        paddingBottom: 5,
+        padding: 0,
+        maxHeight: 60,
         borderColor: 'gray',
         borderWidth: 1,
         marginBottom: 12,
-        paddingLeft: 8,
         width: 300,
+      },
+      containerStyle:{
+        backgroundColor: 'white', 
+        padding: 20,
+        height: 200,
       },
 
 });

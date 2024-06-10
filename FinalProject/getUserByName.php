@@ -1,9 +1,9 @@
 <?php
 require("db.php"); 
 
-$id = $_GET["id"];
+$name = $_GET["name"];
 // 1. Query database for records in "amj426_profiles" 
-$query = "select * from amj426_profiles WHERE id='".$id."'"; 
+$query = "select * from amj426_profiles WHERE name='".$name."'"; 
 // echo $query; 
 $users = $db->query($query); 
 

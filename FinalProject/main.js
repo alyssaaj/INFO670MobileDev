@@ -74,7 +74,8 @@ $(document).ready(function(){
 
         }); 
 
-        $.get("getCategoriesByUser.php", function(data, status){
+
+        $.get("getCategoriesByUser.php?user=1", function(data, status){
             console.log(data); 
             $.each(data, function(index, record){
                 var user = record["user"]; 

@@ -1,9 +1,8 @@
 <?php
 require("db.php"); 
 
-$id = $_GET["id"];
 // 1. Query database for records in "amj426_profiles" 
-$query = "select * from amj426_profiles WHERE id='".$id."'"; 
+$query = "select * from amj426_profiles ORDER BY id DESC LIMIT 1"; 
 // echo $query; 
 $users = $db->query($query); 
 
