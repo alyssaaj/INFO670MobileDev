@@ -38,11 +38,15 @@ GET Request
 Endpoint: https://www.cs.drexel.edu/~amj426/A4/addQuestion.php?question={question}&answer={answer}
 
 Parameters: 
+
     question: String
+    
     answer: String
 
 Response: 
+
     Status Code: 200 OK
+    
     No response body
 
 ### getQuiz
@@ -53,8 +57,11 @@ Endpoint: https://www.cs.drexel.edu/~amj426/A4/getQuiz.php
 Parameters: None
 
 Response: 
+
     Status Code: 200 OK
+    
     Response Body (Example):
+    
     [
         {
             "id": "41",
@@ -90,7 +97,7 @@ Response:
 
 ## Database
 
-Database schema (MySQL)
+Database schema (MySQL - wk77_INFO300_202103)
 
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/e28b191512ebdb2a364d45b3e2b1964fdcc8c892/Assignment4/screenshots/DatabaseSchema.png)
 
@@ -100,7 +107,15 @@ Database schema (MySQL)
 https://github.com/alyssaaj/INFO670MobileDev/tree/5a37b4defab96729358c706c2ceda31242e46bfb/Assignment4/QuizMe
 
 ### Server API Code:
-https://www.cs.drexel.edu/~amj426/A4/addQuestion.php?question={question}&answer={answer}
-https://www.cs.drexel.edu/~amj426/A4/getQuiz.php
+https://www.cs.drexel.edu/~amj426/A4/db.php (database connection)
+https://github.com/alyssaaj/INFO670MobileDev/blob/149a7050dcea879433b4db8b261b7c73b2741148/Assignment4/db.php
+
+https://www.cs.drexel.edu/~amj426/A4/addQuestion.php?question={question}&answer={answer} (API endpoint)
+https://github.com/alyssaaj/INFO670MobileDev/blob/149a7050dcea879433b4db8b261b7c73b2741148/Assignment4/addQuestion.php
+
+https://www.cs.drexel.edu/~amj426/A4/getQuiz.php (API endpoint)
+https://github.com/alyssaaj/INFO670MobileDev/blob/149a7050dcea879433b4db8b261b7c73b2741148/Assignment4/getQuiz.php
+
+https://www.cs.drexel.edu/~amj426/A4/index.html (Testing API page)
 
 
