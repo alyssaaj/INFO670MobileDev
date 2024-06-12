@@ -22,3 +22,6 @@ Alyssa Jordan
 
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/520280524ac7677e35e616b2717e41a3e584ca0c/Assignment4/screenshots/QuizLoaded.png)
 
+[Final Project: Expense Tracker Application](https://github.com/alyssaaj/INFO670MobileDev/tree/main/FinalProject)
+
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/d3711ecffa8560e17c13654554ba6e4963245056/FinalProject/screenshots/HomeOB.png)
