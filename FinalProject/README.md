@@ -94,6 +94,7 @@ Parameters:
 
 ### Initial Design
 This is the sketch of my design for the application.
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/569276d99d666107a8397ac0621323c9d9f0a9f5/FinalProject/screenshots/InitialDesign.png)
 
 ### Major Challenges
 My major challenges were profile creation/editing and calculating the amount left in the budget. Sign up and sign in are very complex features that require multiple database calls and authentication. I knew the timeline of this project would prevent me from implementing them so I had to pivot and come up with a different solution. Updating the profile still proved to be difficult as the php API was harder to troubleshot than the others with more CORS issues. Additionally, calculating the amount left in the budget was difficult it required two API calls, the summation of the prices returned for the expenses call and then I had to substract the expenses from the budget. This took some time to get functioning properly. 
