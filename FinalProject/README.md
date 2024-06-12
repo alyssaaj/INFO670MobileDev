@@ -9,9 +9,13 @@ This is a budgeting/expenses tracking application. The users can set a budget th
 
 ## Application Screenshots
 
-To start, the user should edit the profile to add their name and budget and then save. Next, they should add categories for their expenses.
+To start, the user should edit the profile to add their name and budget and then save.
 
 ![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/f1b87d48f1b096b1f2b11aef14137ec2277b8c66/FinalProject/screenshots/Profile.png)
+
+Next, they should add categories for their expenses.
+
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/7ed1de04cd56bae9dc64ed3c473e3a335db239f7/FinalProject/screenshots/AddCat.png)
 
 From the Home Screen, they can see amount left in their budget and has an encouraging statement and meme. There is also an area to add a new expense.
 
