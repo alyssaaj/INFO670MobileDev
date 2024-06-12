@@ -44,6 +44,8 @@ Endpoint: https://www.cs.drexel.edu/~amj426/FP/addCategory.php?user={user}&cat={
 Parameters:
   user: UserID
   cat: String
+  
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/3002dc6781f854111f93f79b7b8fadc4f858f643/FinalProject/screenshots/apiAC.png)
 
 ### addExpense
 GET Request
@@ -56,6 +58,8 @@ Parameters:
   category: String
   price: decimal
 
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/3002dc6781f854111f93f79b7b8fadc4f858f643/FinalProject/screenshots/apiAE.png)
+
 ### getCategoriesByUser
 GET Request
 
@@ -63,6 +67,8 @@ Endpoint: https://www.cs.drexel.edu/~amj426/FP/getCategoriesByUser.php?user={use
 
 Parameters:
   user: UserID
+  
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/3002dc6781f854111f93f79b7b8fadc4f858f643/FinalProject/screenshots/apiGC.png)
 
 ### getExpensesByUser
 GET Request
@@ -71,6 +77,8 @@ Endpoint: https://www.cs.drexel.edu/~amj426/FP/getExpensesByUser.php?user={user}
 
 Parameters:
   user: UserID
+  
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/3002dc6781f854111f93f79b7b8fadc4f858f643/FinalProject/screenshots/apiGE.png)
 
 ### getUser
 GET Request
@@ -79,6 +87,8 @@ Endpoint: https://www.cs.drexel.edu/~amj426/FP/getUser.php?id={id}
 
 Parameters:
   id: UserID
+
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/3002dc6781f854111f93f79b7b8fadc4f858f643/FinalProject/screenshots/apiGU.png)
 
 ### updateUser
 GET Request
@@ -89,6 +99,7 @@ Parameters:
   name: String
   budget: decimal
 
+![alt text](https://github.com/alyssaaj/INFO670MobileDev/blob/3002dc6781f854111f93f79b7b8fadc4f858f643/FinalProject/screenshots/apiUU.png)
 
 ## Experiences
 
