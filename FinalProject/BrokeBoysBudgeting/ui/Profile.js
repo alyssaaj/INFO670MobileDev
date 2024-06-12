@@ -16,6 +16,9 @@ const Profile = () => {
   const [isLoading2, setLoading2] = useState(true);
   const [userCat, setUserCat] = useState([]);
   const [name, setName] = useState('');
+  const [budget, setBudget] = useState('');
+  const [editTime, setEditTime] = useState(false);
+
 
   const getUser = async () => {
     try {
@@ -71,35 +74,42 @@ const Profile = () => {
     }
   };
 
-  // const updateUser = () => {
-  //   if(name != null && name !== ''){
-  //     const url = `https://www.cs.drexel.edu/~amj426/FP/updateUser.php?name=${name}&budget=5000/`;
-  //     fetch(url, {mode: 'cors'})
-  //       .then(response => response.text())
-  //       .then(data => {
-  //         if (data === "1") {
-  //           //setResponseStatus("Category added successfully.");
-  //           //Alert.alert("Success", "Category added successfully.");
-  //         } else {
-  //           //setResponseStatus("Failed to add category.");
-  //           //Alert.alert("Error", "Failed to add category.");
-  //         }
-  //       })
-  //       .catch(error => {
-  //         //setResponseStatus("Error: " + error.message + ", MORE: " + JSON.stringify(error));
-  //         console.log(error);
-  //         // Alert.alert("Error", "Error: " + error.message);
-  //       });
-  //   }
-  //   else{
-  //     //setResponseStatus("Failed to add category. The field was left blank.");
-  //     //Alert.alert("Error", "Failed to add category. The field was left blank.");
-  //   }
+  const updateUser = () => {
+    if(name != null && name !== '' && budget != null && budget !== ''){
+      const url = `https://www.cs.drexel.edu/~amj426/FP/updateUser.php?name=${name}&budget=${budget}`;
+      fetch(url, {mode: 'cors', method: 'POST'})
+        .then(response => response.text())
+        .then(data => {
+          if (data === "1") {
+            //setResponseStatus("Category added successfully.");
+            //Alert.alert("Success", "Category added successfully.");
+          } else {
+            //setResponseStatus("Failed to add category.");
+            //Alert.alert("Error", "Failed to add category.");
+          }
+        })
+        .catch(error => {
+          //setResponseStatus("Error: " + error.message + ", MORE: " + JSON.stringify(error));
+          console.log(error);
+          // Alert.alert("Error", "Error: " + error.message);
+        });
+    }
+    else{
+      //setResponseStatus("Failed to add category. The field was left blank.");
+      //Alert.alert("Error", "Failed to add category. The field was left blank.");
+    }
+    setEditTime(false);
 
-  // };
+  };
+
+  const editUser = () => {
+    setEditTime(true)
+  }
+
+
   useEffect(() => {
     getUser();
-  },[]);
+  });
 
   return (
 
@@ -127,29 +137,32 @@ const Profile = () => {
               <View>
                 <View style={styles.row}>
                   <Text style={styles.label}>Name:</Text>
-                  <Text style={styles.input}>{dataUser[0].name}</Text>
-                </View>
-                {/* <View style={styles.row}>
                   <TextInput
-                    label="Name:"
-                    style={styles.inputNew}
-                    value={name}
+                    //label="Name:"
+                    style={styles.input}
+                    value={editTime ? (name) : (dataUser[0].name)}
+                    editable={editTime}
+                    //placeholder={dataUser[0].name}
                     onChangeText={name => setName(name)}
                   />
-                </View> */}
+                </View>
+
                 <View style={styles.row}>
                   <Text style={styles.label}>Budget:</Text>
-                  <Text style={styles.input}>{dataUser[0].budget}</Text>
+                  <TextInput
+                    //label="Budget:"
+                    style={styles.input}
+                    value={editTime ? (budget) : (dataUser[0].budget)}
+                    editable={editTime}
+                    //placeholder={dataUser[0].budget}
+                    onChangeText={budget => setBudget(budget)}
+                  />
                 </View>
-                <View style={styles.row}>
-                  <Text style={styles.label}>Categories:</Text>
-                    <Text style={styles.input}>
-                      {userCat.map((c, index) => (
-                        <Text key={index}>{c.cat}, </Text>
-                      ))}
-                      </Text>
-                </View>
-                {/* <Button style={{marginTop: 20}} mode="contained" onPress={updateUser}>Save</Button> */}
+                {editTime ? 
+                (<Button style={{marginTop: 20}} mode="contained" onPress={updateUser}>Save Profile</Button>) 
+                : 
+                (<Button style={{marginTop: 20}} mode="outlined" onPress={editUser}>Edit Profile</Button>) }
+  
               </View>
             )}
           </View>
@@ -157,19 +170,30 @@ const Profile = () => {
           <View style = {styles.addNew}> 
             <Portal>
               <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={styles.containerStyle}>
-                <TextInput
-                  label="New Category"
-                  style={styles.inputNew}
-                  value={cat}
-                  onChangeText={cat => setCat(cat)}
-                />
-                <Button style={{marginTop: 20}} mode="contained" onPress={addCategory}>
-                  Add Category
-                </Button>
+                  <View>
+                    <Text style={styles.label}>Current Categories:</Text>
+                    <Text style={styles.input}>
+                      {userCat.map((c, index) => (
+                        <Text key={index}>{c.cat}, </Text>
+                      ))}
+                      </Text>
+                  </View>
+                <View style={{marginTop: 20}}>
+                  <TextInput
+                    label="New Category"
+                    style={styles.inputNew}
+                    value={cat}
+                    onChangeText={cat => setCat(cat)}
+                  />
+                  <Button mode="contained" onPress={addCategory}>
+                    Add Category
+                  </Button>
+                </View>
+                
               </Modal>
             </Portal>
 
-              <Button style={{marginTop: 30}} mode="contained" onPress={showModal}>
+              <Button style={{marginTop: 20}} mode="contained" onPress={showModal}>
                 Add New Category
               </Button>
           </View>
@@ -234,7 +258,8 @@ const styles = StyleSheet.create({
       containerStyle:{
         backgroundColor: 'white', 
         padding: 20,
-        height: 200,
+        height: 'auto',
+        justifyContent: 'space-between',
       },
 
 });

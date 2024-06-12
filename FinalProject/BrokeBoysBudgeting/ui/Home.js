@@ -23,7 +23,7 @@ const Home = () => {
   const [dataUser, setDataUser] = useState([]);
   const [left, setLeft] = useState();
   const [isLoading, setLoading] = useState(true);
-
+  const [overBudget, setOverBudget] = useState(false);
   const [count, setCount] = useState(0);
   const [addC, setAddC] = useState(false);
   
@@ -46,7 +46,6 @@ const Home = () => {
 
 
   const getAmountLeft = async () => {
-    console.log("here");
 
     try {
       const response = await fetch('https://www.cs.drexel.edu/~amj426/FP/getExpensesByUser.php?user=1');
@@ -59,7 +58,7 @@ const Home = () => {
       for (const key in expenses) {
         totalSpent = totalSpent + Number(expenses[key].price);
       }
-      console.log(totalSpent);
+      //console.log(totalSpent);
       try {
         const response = await fetch('https://www.cs.drexel.edu/~amj426/FP/getUser.php?id=1');
         const json = await response.json();
@@ -72,6 +71,9 @@ const Home = () => {
             amountLeft = Number(dataUser[key].budget) - totalSpent;
           }
           setLeft(amountLeft.toFixed(2));
+          if (amountLeft < 0){
+            setOverBudget(true);
+          }
           setLoading(false);
           if (count < 1){
             setCount(count + 1);
@@ -114,10 +116,9 @@ const Home = () => {
     }
   };
 
-
   useEffect(() => {
     getAmountLeft();
-  }, [count]);
+  });
 
   return (
     <View style={styles.outerContainer}>
@@ -134,8 +135,18 @@ const Home = () => {
             {isLoading ? 
             (<Text variant="headlineSmall" style={{marginTop: 30, marginBottom: 30}}>Calculating Amount Left...</Text>) : 
             (<Text variant="displaySmall" style={{marginTop: 30, marginBottom: 30}}>${left} Left</Text>)}
-        
-            <Text variant="headlineSmall" style={{color: 'green'}}>You're doing great! Keep it up!</Text>
+
+            {overBudget ? 
+              (<View style={styles.message}>
+                <Text style={styles.quote} variant="headlineSmall">Oops! Nobody's perfect. You'll get it next time.</Text>
+                <Image style={styles.moneyFoe} source={require('../img/mmmp.png')}/>
+              </View>) 
+              : 
+              (<View style={styles.message}>
+                <Text style={styles.quote} variant="headlineSmall" >Amazing job! You thrifty queen!</Text>
+                <Image style={styles.moneyFriend} source={require('../img/mcm.png')}/>
+              </View>)}
+          
             {/* <Image
               style={styles.moneyFriend}
               source={require('../img/happy.png')}
@@ -195,8 +206,14 @@ const styles = StyleSheet.create({
       flex: 1,
     },
     moneyFriend: {
-      width: 195,
-      height: 195,
+      marginTop: 20,
+      width: 300,
+      height: 161,
+    },
+    moneyFoe: {
+      marginTop: 20,
+      width: 300,
+      height: 167,
     },
     container: {
         marginTop: 20,
@@ -239,6 +256,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'white', 
         padding: 20,
         height: 400,
+      },
+      message: {
+        marginTop: 30,
+        alignItems: 'center',
+      },
+      quote: {
+        textAlign: 'center', 
+        marginLeft: 20, 
+        marginRight: 20,
+        color: 'orange',
       },
 
 });

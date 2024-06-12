@@ -50,6 +50,22 @@ $(document).ready(function(){
         });
     });
 
+    $("#updateUser").click(function(){
+        // 1. get values from inputs
+        var name = $("#nameU").val(); 
+        var budget = $("#budgetU").val(); 
+
+        // 2. send GET request to addProduct API
+        var serverURL = "updateUser.php?name=" + name
+                        + "&budget=" + budget;
+
+        // 3. get data through the callback function
+        $.get(serverURL, function(data, status){
+            console.log("data and status:", data, status); 
+            $("#status").text(data + ", " + status); 
+        });
+    });
+
 
     $("#btnReload").click(function(){
         $.get("getUser.php", function(data, status){

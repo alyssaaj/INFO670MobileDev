@@ -29,7 +29,9 @@ const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
   return(
-    <Tab.Navigator>
+    <Tab.Navigator
+      //initialRouteName="Profile"
+      >
             <Tab.Screen 
               name="Home" 
               component={HomeScreen}

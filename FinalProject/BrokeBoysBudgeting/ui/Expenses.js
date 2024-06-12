@@ -3,6 +3,7 @@ import { View, StyleSheet, Alert, ScrollView } from 'react-native';
 import { TextInput, Text, Button, Appbar, DataTable } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+
 const Expenses = () => {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
@@ -25,7 +26,7 @@ const Expenses = () => {
 
   useEffect(() => {
     getExpensesByUser();
-  }, []);
+  });
 
 
   return (
